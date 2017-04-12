@@ -17,6 +17,10 @@ class DojosController < ApplicationController
     end
   end
 
+  def show
+    @dojo = Dojo.find(params[:id])
+  end
+
   private
   def dojo_params
     params.require(:dojo).permit(:branch, :street, :city, :state)

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get 'dojos/new' => 'dojos#new'
 
+  get 'dojos/:id' => 'dojos#show'
+
   post 'dojos' => 'dojos#create'
 
   # The priority is based upon order of creation: first created -> highest priority.
