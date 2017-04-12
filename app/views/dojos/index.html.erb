@@ -1,6 +1,6 @@
 <h1>Dojo Dashboard</h1>
 
-<h2>Listing <%= pluralize(@dojos.count, "Dojo") %></h2>
+<h2>Listing <%= @count %> Dojos</h2>
 
 <table>
   <thead>
@@ -8,6 +8,7 @@
     <th>Street</th>
     <th>City</th>
     <th>State</th>
+    <th>Action</th>
   </thead>
   <tbody>
     <% @dojos.each do |dojo| %>
@@ -16,7 +17,10 @@
       <td><%= dojo.street %></td>
       <td><%= dojo.city %></td>
       <td><%= dojo.state %></td>
+      <td><a href='#'>Show</a>|<a href='#'>Edit</a>|<a href='#'>Show</a></td>
     </tr>
     <% end %>
   </tbody>
 </table>
+
+<a href="/dojos/new">Create a new dojo</a>
