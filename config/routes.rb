@@ -7,11 +7,17 @@ Rails.application.routes.draw do
 
   get 'dojos/:id' => 'dojos#show'
 
-  get "dojos/:id/edit" => "dojos#edit"
+  get 'dojos/:id/edit' => 'dojos#edit'
 
-  patch "dojos/:id" => "dojos#update"
+  patch 'dojos/:id' => 'dojos#update'
 
-  delete "dojos/:id" => "dojos#destroy"
+  delete 'dojos/:id' => 'dojos#destroy'
+
+  get '/dojos/:dojo_id/students/new' => 'students#new'
+
+  post '/dojos/:dojo_id/students' => 'students#create'
+
+  # get "/dojos/:id/students/:id" => "students#show"
 
   post 'dojos' => 'dojos#create'
 
