@@ -26,13 +26,19 @@ class DojosController < ApplicationController
   end
 
   def update
-    @dojo = Dojo.find(params[:id])
-    if @dojo.update(dojo_params)
+    dojo = Dojo.find(params[:id])
+    dojo.update(dojo_params)
+    if dojo.save
       redirect_to :root
     else
-      flash[:errors] = @dojo.errors.full_messages
+      flash[:errors] = dojo.errors.full_messages
       redirect_to :back
     end
+  end
+
+  def destroy
+    @dojo = Dojo.find(params[:id]).destroy
+    redirect_to :root
   end
 
   private
