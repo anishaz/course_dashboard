@@ -1,4 +1,8 @@
-<h1><%= @dojo.branch %>'s <%= @student.first_name %><%= @student.last_name %></h1>
+<h1><%= "#{@student.branch}'s #{@student.first_name} #{@student.last_name}" %></h1>
+
+<% if flash[:notice] %>
+	<p><%= flash[:notice] %></p>
+<% end %>
 
 <h3>Email: <%= @student.email %></h3>
 
@@ -10,16 +14,16 @@
     <th>Last Name</th>
     <th>Email</th>
   </thead>
-  <!-- <tbody>
-    <% @students.each do |student| %>
+  <tbody>
+    <% @cohort.each do |student| %>
     <tr>
       <td><%= student.first_name %></td>
       <td><%= student.last_name %></td>
       <td><%= student.email %></td>
     </tr>
     <% end %>
-  </tbody> -->
+  </tbody>
 </table>
 
 <a href="/">Home</a>
-<a href='/dojos/:dojo_id/students/new'>Add Student</a>
+<a href='/dojos/:dojo_id/students/new'>Edit</a>

@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   post '/dojos/:dojo_id/students' => 'students#create'
 
-  # get "/dojos/:id/students/:id" => "students#show"
+  get '/dojos/:dojo_id/students/:id' => 'students#show'
 
   post 'dojos' => 'dojos#create'
 
