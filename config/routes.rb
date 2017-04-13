@@ -19,6 +19,12 @@ Rails.application.routes.draw do
 
   get '/dojos/:dojo_id/students/:id' => 'students#show'
 
+  get '/dojos/:dojo_id/students/:id/edit' => 'students#edit'
+
+  patch 'dojos/:dojo_id/students/:id' => 'students#update'
+
+  delete '/dojos/:dojo_id/students' => 'students#destroy'
+
   post 'dojos' => 'dojos#create'
 
   # The priority is based upon order of creation: first created -> highest priority.
