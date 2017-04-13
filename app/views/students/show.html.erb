@@ -1,8 +1,4 @@
-<h1><%= "#{@student.branch}'s #{@student.first_name} #{@student.last_name}" %></h1>
-
-<% if flash[:notice] %>
-	<p><%= flash[:notice] %></p>
-<% end %>
+<h1> <%= @dojo.branch %>'s <%= @student.first_name %> <%= @student.last_name %></h1>
 
 <h3>Email: <%= @student.email %></h3>
 
@@ -26,4 +22,4 @@
 </table>
 
 <a href="/">Home</a>
-<a href='/dojos/:dojo_id/students/new'>Edit</a>
+<a href="/dojos/<%= @dojo.id %>/students/<%= @student.id %>/edit">Edit</a>

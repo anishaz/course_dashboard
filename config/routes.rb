@@ -1,31 +1,19 @@
 Rails.application.routes.draw do
   root 'dojos#index'
-
   get 'dojos/index'
-
+  post 'dojos' => 'dojos#create'
   get 'dojos/new' => 'dojos#new'
-
-  get 'dojos/:id' => 'dojos#show'
-
   get 'dojos/:id/edit' => 'dojos#edit'
-
+  get 'dojos/:id' => 'dojos#show' #If you want to do your own custom routes you can do: get 'dojos/:id', as: "dojo"
   patch 'dojos/:id' => 'dojos#update'
-
   delete 'dojos/:id' => 'dojos#destroy'
 
-  get '/dojos/:dojo_id/students/new' => 'students#new'
-
-  post '/dojos/:dojo_id/students' => 'students#create'
-
-  get '/dojos/:dojo_id/students/:id' => 'students#show'
-
-  get '/dojos/:dojo_id/students/:id/edit' => 'students#edit'
-
+  post 'dojos/:dojo_id/students' => 'students#create'
+  get 'dojos/:dojo_id/students/new' => 'students#new'
+  get 'dojos/:dojo_id/students/:id/edit' => 'students#edit'
+  get 'dojos/:dojo_id/students/:id' => 'students#show'
   patch 'dojos/:dojo_id/students/:id' => 'students#update'
-
-  delete '/dojos/:dojo_id/students' => 'students#destroy'
-
-  post 'dojos' => 'dojos#create'
+  delete 'dojos/:dojo_id/students/:id' => 'students#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
